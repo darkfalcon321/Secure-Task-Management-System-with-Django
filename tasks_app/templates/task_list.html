@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title}Task Lists{% endblock}
+
+{% block content %}
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Status</th>
+        <th>Priority</th>
+        <th>Category</th>
+    </tr>
+    {% for task in tasks %}
+        <tr>
+            <td><a href="{% url 'task_detail' task.id %}">{{ task.title }}</a></td> 
+            <td>{{ task.status }}</td>
+            <td>{{ task.priority }}</td>
+            <td>{{ task.category.name }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+<p>Create a new <a href="{% url 'task_create' %}">task</a></p>
+
+
+{% endblock %}
+

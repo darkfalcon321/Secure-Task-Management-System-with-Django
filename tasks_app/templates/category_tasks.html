@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title}Tasks with Associated Category{% endblock}
+
+{% block content %}
+<h1> Tasks in {{category.name}} </h1>
+
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Status</th>
+        <th>Priority</th>
+    </tr>
+    {% for task in tasks %}
+        <tr>
+            <td><a href="{% url 'task_detail' task.id %}">{{ task.title }}</a></td> 
+            <td>{{ task.status }}</td>
+            <td>{{ task.priority }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

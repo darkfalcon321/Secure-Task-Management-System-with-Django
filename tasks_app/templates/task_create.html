@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<a href="{% url 'task_list' %}">Back></a>
+
+<form style="text-align: center;">
+    {% csrf_token %}
+    {{ forms.as_p }}
+    <button type = "submit" > Submit Task </button>
+</form>
+
+{% endblock %}

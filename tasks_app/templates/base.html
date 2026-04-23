@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+    
+    {% load static %}
+    <head>
+        <meta charset = "UTF-8" />
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0" />
+        
+        <title>
+            {% block title %} Django Assignment {% endblock %}
+        </title>
+        
+        <link rel="stylesheet" type = "text/css" href="{% static 'css/task_styles.css' %}">
+
+    </head>
+
+    <body>
+
+        <header class="header-box">
+            <p>Django Practical Assignment</p>
+        </header>
+            <ul class="list-style">
+                <li><a href="{% url 'task_list' %}">Task</a></li>
+                <li><a href="{% url 'category_list' %}">Categories</a></li>
+            </ul> 
+
+    <main>
+    {% block content %} 
+    {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; Django Practical Assignment   |   22823085    |   Albin Babu</p>
+    </footer>
+
+    </body>
+
+</html>
